@@ -1,0 +1,99 @@
+  #default :from => "from@example.com"
+  +++++++++++++
+  http://blog.yuaz.net/2010/09/17/uninitialized-constant-rbreadlineencoding-error-under-ruby-1-8-x/
+http://pivotallabs.com/users/chad/blog/articles/366-ruby-debug-in-30-seconds-we-don-t-need-no-stinkin-gui-
+http://guides.rubyonrails.org/debugging_rails_applications.html
+
+http://www.railsforum.com/viewtopic.php?id=31934  - ActionMailer won't work! "undefined local variable
+++++++++++++++++++++
+
+@post = current_author.posts.build(params[:post])
+
++++++++++++++++++++++++++++++++++++++++++++++++++
+@post = Author.posts.find_by_email(params[:email])
++++++++++++++++++++++++++++++++++
+http://github.com/winton/sum/blob/master/lib/sum/controller/new.rb
+
+if email = UserEmail.find_by_email(params[:user][:email])
+      if @user = email.user
+        @user.send_now = true
+        @user.update_attributes(params[:user])
+      end
+    else
+      @user = User.create(params[:user])
+    end
+++++++++++++++++++++++++++++++++++++++
+http://capturedsparks.com/2008/06/receiving-emails-with-ruby-on-rails/
+def create
+  if params[:mail]
+   Notifier.receive(params[:mail])
+  end
+end
+
++++++++++++++++++++++++++++++++++
+
+ if params[:mail]
+    Emailer.receive(params[:mail])
+  end
+else
+++++++++++++++
+
+  
+  
+  +++++++++
+  
+  def receive(email)
+ debugger
+ @post = Author.posts.find_by_email(author.email)
+ #@post = Author.posts.find_by_id(params[:id])
+ Post.create(:title => email.subject,
+               :body => email.body)				   
+ Puts "received email with the subject '#{email.subject}'"
+ 
+ end
+  
+  
+  ++++++++++++++++++
+  
+  #def receive(email)
+  #@post =post.find_or_create_by_email( :email => email.from)
+ # @post = post.create(:title => email.subject, :body => email.body)
+ # end
+          
+ # 	def receive(email)
+ #  @post = Author.post.find_by_email(email.to.first)
+  # Post.create(:title => email.subject,
+ #      :body => email.body)
+#	   puts 'Received an email with the subject "#{mail.subject}"'
+  #end	  
+  
+   def receive(email)
+   post = Post.find_by_address(email.from)
+   #@post = Author.posts.find_by_email(params[:email])
+   #@post = Author.posts.build(params[:post])
+   #@post = Author.posts.find_by_email(email.to.first)
+   Post.create(:title => email.subject,
+       :body => email.body)
+puts 'Received an email with the subject "#{mail.subject}"'
+logger.debug "receive: #{@post.inspect}"
+  end
+
+
+ # def receive(email)
+ #   author_email = find_author(post)
+ #	create_post(post, author_email)
+# end
+ 
+  # Private
+   
+  # def find_author(post)
+  #  author = author.find_by_id(author.email)
+  #  author ? author.email : (raise "Couldn't find author #{author_email}")
+#	end
+	
+#	 def create_post(post, author_email)
+   # post.email.create!(  :title => email.subject,
+	#				:body => email.body,
+     #               :author_email => author.email)
+	#	puts 'posted Email as message'			
+	#end

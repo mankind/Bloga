@@ -1,5 +1,9 @@
 Bloga::Application.routes.draw do
   
+  devise_for :authors
+
+  resources :authors
+
   resources :posts do
       resources :comments
   end
@@ -7,7 +11,7 @@ Bloga::Application.routes.draw do
   match '/new',   :to => 'posts#about'
   match '/show',    :to => 'posts#show'
   
-  root :to => 'posts#index'
+  root :to => "posts#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

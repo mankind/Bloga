@@ -1,10 +1,16 @@
-<h1> The Blog!</h1>
+<h1> Messages!</h1>
 <% @posts.each do |post| %>
-<h2><%= link_to post.title, post %></h2>
+<h2><%= link_to post.title, post %></h>
+
+<p><b>Created <%= time_ago_in_words(post.created_at) %> ago</b></p>
 <div class="entry">
   <%= link_to "Edit", edit_post_path(post) %>
-  <%= button_to "delete", post_path, :confirmation => "Are you sure?", :method => :delete %>
+  
+  <hr/>
+  
+  <%= button_to "Delete", post, 
+       :confirmation => "Are you sure?", :method => :delete %>
   <hr/>
 </div>
 <% end %>
-<%= link_to "New Post", new_post_path%>
+<%= link_to "Create new Message", new_post_path %>

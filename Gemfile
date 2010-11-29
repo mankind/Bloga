@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0.rc'
+gem 'rails', '3.0.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -14,14 +14,18 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug'
+ gem 'ruby-debug'
 
 # To use colour
   gem 'win32console'
 
 # install the win32-process gem to work with spork test server
  # gem 'win32-process', '0.6.2'
-
+ 
+ gem 'responders'
+ gem 'simple_form'
+ gem 'devise', '1.1.3'
+ 
 # Bundle the extra gems:
 # gem 'bj'
 # gem 'nokogiri', '1.4.1'
@@ -32,14 +36,14 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development do
-  gem 'rspec-rails', '2.0.0.beta.19'
+  gem 'rspec-rails', '2.1.0'
   gem 'annotate-models'
 
 end
 
 group :test do
-  gem 'rspec', '2.0.0.beta.19'
-  gem 'rspec-rails', '2.0.0.beta.19'
+  gem 'rspec', '2.1.0'
+  gem 'rspec-rails', '2.1.0'
  
 end
 

@@ -15,7 +15,10 @@ Bloga::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  #added by me as required by devise gem
+  config.action_mailer.default_url_options = { :hosts => 'localhost:3000' }
+  
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
