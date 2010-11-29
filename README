@@ -1,5 +1,5 @@
 == Welcome to the my blog repo
-This is Rails 3.0.1 blog app showing how to receiving incoming email in Rails.
+This is Rails 3.0.1 blog app showing how to receive incoming email in Rails.
 
 It use devise for authentication and dynamic form plugin.
 
