@@ -1,19 +1,9 @@
-== Welcome to the my blog repo
-This is Rails 3.0.1 blog app showing how to receive incoming email in Rails.
+== The Blog App
+This is Rails 4 blog app showing how to write a blog post via incoming email in Rails.
 
-It use devise for authentication and dynamic form plugin.
+It use devise for authentication.
 
 In bloga/script, you will find the mail_receiver script that is fetch new mails from gmail
 and mail_ctl which daemonizes the script.
 
 
-== How to install
-Download it to your local machine and:
-
-Add gmail username and passowrd to bloga/config/initializers/set_mail.rb for receiving email
-Also add bloga/config/mail.yml  for sending email
-
-You can run commands like
- ruby script/mail_receiver_ctl.rb start  to start your script 
- and 
- ruby script/mail_receiver_ctl.rb stop  to stop it. Very handy.
