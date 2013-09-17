@@ -1,21 +1,18 @@
 class PostsController < ApplicationController
-
+  before_action :set_post, only: [:show, :update, :destroy]
+  
   #to ensure only authenticated authors can post to the blog
   #change the respond_to :html to respond_to :only => :index
   respond_to :atom, :only => :index
-  #add a before filter to invoke devise helper to authenticate all except the [:index, :show]
-  before_filter :authenticate_author!, :except => [:index, :show]
   
   def index
-  @posts = Post.order("created_at desc")
-  #@posts = Post.all
-  
-  respond_with @posts
+    @posts = Post.order("created_at desc")
+    #@posts = Post.all
+    respond_with @posts
   end
   
   def show
-  @posts = Post.find_by_id(params[:id])
-  respond_with @post
+    respond_with @post
   end
   
   def new
@@ -24,36 +21,36 @@ class PostsController < ApplicationController
   
   #to make devise gem use the current author change Post.new(params[:post]) to current_author.posts.build(params[:posts])
   def create
-    
-	if params[:mail]
-    Emailer.receive(source)
- else
-    @post = current_author.posts.build(params[:post])
+	  if params[:mail]
+      Emailer.receive(source)
+    else
+     #@post = current_author.posts.build(params[:post])
+      @post = Post.new(post_params)
 	
-    @post.save
-	respond_with(@post)
+     @post.save
+	   respond_with(@post)
 	  end
 	end
 	
 	def edit
-	@post = Post.find_by_id(params[:id])
+    @post = Post.find_by(id: params[:id])
 	end
 	
 	def update
-	@post = Post.find_by_id(params[:id])
-	@post.update_attributes(params[:post])
-	respond_with(@post)
-	
-	#all the flash msg under this were commented out because respond_with inserts it automatically.
-	#redirect_to posts_parh
-	#else
-	 # render "new"
-	  # end
+	  @post.update(post_params)
+	  respond_with(@post)
 	end
 	
 	def destroy
-	@post = Post.find_by_id(params[:id])
-	@post.destroy
-	respond_with(@post)
+	  @post.destroy
+    redirect_to posts_path
 	end
+  
+  def post_params
+    params.require(:post).permit(:body, :title, :author_id)
+  end
+  
+  def set_post
+     @post = Post.find_by(id: params[:id])
+  end
 end

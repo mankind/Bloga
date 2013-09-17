@@ -9,7 +9,7 @@
   <hr/>
   
   <%= button_to "Delete", post, 
-       :confirmation => "Are you sure?", :method => :delete %>
+  data: {confirmation: "Are you sure?"}, :method => :delete %>
   <hr/>
 </div>
 <% end %>

@@ -1,12 +1,17 @@
 
-<%= form_for(@post) do |form| %>
-  <%= form.error_messages %>
+<%= form_for(@post) do |f| %>
+ 
+   <% if @post.errors.any? %>
+        <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+    <% end %>
   
-  <p><%= form.label :title, "Title" %></p>
-  <p><%= form.text_field :title %></p>
+  <p><%= f.label :title, "Title" %></p>
+  <p><%= f.text_field :title %></p>
   
-  <p><%= form.label :body, "Body" %></p>
-  <p><%= form.text_area :body %></p>
+  <p><%= f.label :body, "Body" %></p>
+  <p><%= f.text_area :body %></p>
   
-  <%= form.submit %>
+  <%= f.submit %>
 <%end %>

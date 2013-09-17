@@ -1,13 +1,19 @@
-<%= simple_form_for(@author) do |f| %>
-  <% f.error_messages %>
+<%= form_for(@author) do |f| %>
+  
+   <% if @author.errors.any? %>
+        <% @author.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+    <% end %>
     
-  <div class="inputs">
-   <%= f.input :name %>
-	<%= f.input :email %>
-    <%= f.input :age %>
-	<%= f.input :password %>
-	<%= f.input :password_confirmation %>
-  </div>
+ 
+  <p> <%= f.label :name, "Name" %></p>
+  <p><%= f.text_field :name %>
+	
+  <p><%= f.label :age, "Age" %></p>
+  <p><%= f.text_field :age %></p>
+	
+ 
 
   <div class="actions">
     <%= f.button :submit %>
