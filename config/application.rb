@@ -19,5 +19,18 @@ module Bloga
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    
+    #adde by me to load config/mysettings.yml
+    #tips from http://railsapps.github.io/rails-environment-variables
+    #The code opens the config/mysettings.yml file, reads each key/value pair, and sets environment variables.
+    #The code only runs if the file exists. If the file exists, the code overrides ENV variables set in the Unix shell.
+    config.before_configuration do
+      env_file = File.join(Rails.root, 'config', 'mysettings.yml')
+      YAML.load(File.open(env_file)).each do |key, value|
+         ENV[key.to_s] = value
+      end if File.exists?(env_file)
+    end
+    
+    
   end
 end

@@ -4,8 +4,10 @@ require 'net/http'
 require 'rubygems'
 
 
-config = YAML.load(File.read(File.join(File.dirname(__FILE__), '..', 'config', 'mail.yml')))
-
+#config = YAML.load(File.read(File.join(File.dirname(__FILE__), '..', 'config', 'mail.yml')))
+#config = YAML.load(File.read(File.join(File.dirname(__FILE__), '..', 'config', 'imap_settings.yml')))
+config = File.expand_path('../../config/initializers/load_imap_settings',  __FILE__)
+#ImapSettings = YAML.load(File.read(Rails.root + 'config' + 'imap_settings.yml'))[Rails.env].with_indifferent_access
 
 begin
   puts 'Checking for new mail'
