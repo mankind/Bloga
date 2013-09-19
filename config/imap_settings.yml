@@ -2,6 +2,6 @@
 #which are pulled down and pased to Actiomailer receive method
 
 host: <%= ENV['IMAP_HOST'] %>
-#port: <%= ENV['IMAP_PORT'] %>
-#username: <%= ENV['IMAP_USERNAME'] %>
-#password: <%= ENV['IMAP_PASSWORD'] %>
+port: <%= ENV['IMAP_PORT'] %>
+username: <%= ENV['IMAP_USERNAME'] %>
+password: <%= ENV['IMAP_PASSWORD'] %>
