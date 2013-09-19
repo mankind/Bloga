@@ -14,9 +14,12 @@ config = File.expand_path('../../config/initializers/load_imap_settings',  __FIL
 begin
   puts 'Checking for new mail'
   #imap = Net::IMAP.new(config['host'], config['port'], true)
-  imap = Net::IMAP.new(config[:host], config[:port], true)
   #imap.login(config['username'], config['password'])
+  
+  #current combination
+  imap = Net::IMAP.new(config[:host], config[:port], true)
   imap.login(config[:username], config[:password])
+  
 
   # select inbox as our mailbox to process
   imap.select('Inbox')
@@ -34,11 +37,13 @@ begin
      end
   
    # Delete the email
+    puts 'deleting  the email'
     imap.uid_copy(uid, "[Gmail]/All Mail")
     imap.uid_store(uid, "+FLAGS", [:Deleted])
   end
 
   # expunge removes the deleted emails
+  puts 'expunging, logging out and disconnect'
   imap.expunge
   imap.logout
   imap.disconnect
