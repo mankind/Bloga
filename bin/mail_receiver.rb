@@ -1,6 +1,8 @@
 #require File.join(File.dirname(File.expand_path(__FILE__)), '..', 'config', 'environment')
 #shortened form
 require File.join(__dir__, '..', 'config', 'environment')
+
+require_relative '../config/initializers/load_imap_settings'
 require 'net/imap'
 require 'net/http'
 require 'rubygems'
@@ -8,21 +10,19 @@ require 'rubygems'
 # amount of time to sleep after each loop below
 SLEEP_TIME = 60
 
-#config = YAML.load(File.read(File.join(File.dirname(__FILE__), '..', 'config', 'mail.yml')))
-#config = YAML.load(File.read(File.join(File.dirname(__FILE__), '..', 'config', 'imap_settings.yml')))
-config = File.expand_path('../../config/initializers/load_imap_settings',  __FILE__)
-#ImapSettings = YAML.load(File.read(Rails.root + 'config' + 'imap_settings.yml'))[Rails.env].with_indifferent_access
+config = ImapSettings
+
+puts "Hello config is, #{config}"
 
 begin
   puts 'Checking for new mail'
-  #imap = Net::IMAP.new(config['host'], config['port'], true)
-  #imap.login(config['username'], config['password'])
-  
-  #current combination
+   
   imap = Net::IMAP.new(config[:host], config[:port], true)
-  imap.login(config[:username], config[:password])
+  puts "Hello imap is, #{imap}"
   
-
+  #imap.authenticate('LOGIN', [:username], config[:password])      
+  
+  imap.login(config[:username], config[:password])
   # select inbox as our mailbox to process
   imap.select('Inbox')
   
