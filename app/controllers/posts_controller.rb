@@ -23,13 +23,15 @@ class PostsController < ApplicationController
   def create
 	  if params[:mail]
       Emailer.receive(source)
-    else
+    elsif
      #@post = current_author.posts.build(params[:post])
       @post = Post.new(post_params)
-	
-     @post.save
-	   respond_with(@post)
-	  end
+	    @post.save
+      PostMailer.post_created.deliver
+	    respond_with(@post)
+     else
+      render :action => "new"
+	   end
 	end
 	
 	def edit

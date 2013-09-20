@@ -4,7 +4,8 @@ require File.join(__dir__, '..', 'config', 'environment')
 
 require_relative '../config/initializers/load_imap_settings'
 require 'net/imap'
-require 'net/http'
+#require 'net/http'
+require "net/https"
 require 'rubygems'
 
 # amount of time to sleep after each loop below
@@ -18,6 +19,7 @@ begin
   puts 'Checking for new mail'
    
   imap = Net::IMAP.new(config[:host], config[:port], true)
+ 
   puts "Hello imap is, #{imap}"
   
   #imap.authenticate('LOGIN', [:username], config[:password])      

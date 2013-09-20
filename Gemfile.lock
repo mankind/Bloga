@@ -30,7 +30,11 @@ GEM
     bcrypt-ruby (3.1.2)
     bcrypt-ruby (3.1.2-x86-mingw32)
     bcrypt-ruby (3.1.2-x86-mswin32)
+    better_errors (1.0.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
     builder (3.1.4)
+    coderay (1.1.0)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -47,7 +51,11 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.1)
+    griddler (0.6.1)
+      htmlentities
+      rails (>= 3.2.0)
     hike (1.2.3)
+    htmlentities (4.3.1)
     i18n (0.6.5)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
@@ -116,9 +124,11 @@ PLATFORMS
   x86-mswin32
 
 DEPENDENCIES
+  better_errors
   coffee-rails (~> 4.0.0)
   daemons
   devise
+  griddler
   jquery-rails
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)

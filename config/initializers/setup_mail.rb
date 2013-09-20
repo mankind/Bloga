@@ -1,3 +1,4 @@
+=begin
 ActionMailer::Base.smtp_settings = {
   address: ENV["ACTIONMAILER_BASE_SMTP_SETTINGS_ADDRESS"],  
   port: ENV["ACTIONMAILER_BASE_SMTP_SETTINGS_PORT"],
@@ -7,8 +8,7 @@ ActionMailer::Base.smtp_settings = {
   authentication: ENV["ACTIONMAILER_BASE_SMTP_AUTHENTICATION"],  
   enable_starttls_auto: true
  } 
-   
-   
-   
-   
+=end
+
+ 
   
