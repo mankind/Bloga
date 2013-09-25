@@ -12,7 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 
 gem 'griddler'
-
+gem 'twilio-ruby'
 group :development do
   gem "better_errors"
 end

@@ -1,7 +1,7 @@
 #used for imap settings of the gmail account we poll for email sent there 
 #which are pulled down and pased to Actiomailer receive method
 
-host: <%= ENV['IMAP_HOST'] %>
-port: <%= ENV['IMAP_PORT'] %>
-username: <%= ENV['IMAP_USERNAME'] %>
-password: <%= ENV['IMAP_PASSWORD'] %>
+host: <%= ENV['IMAP_TEST_HOST'] %>
+port: <%= ENV['IMAP_TEST_PORT'] %>
+username: <%= ENV['IMAP_TEST_USERNAME'] %>
+password: <%= ENV['IMAP_TEST_PASSWORD'] %>

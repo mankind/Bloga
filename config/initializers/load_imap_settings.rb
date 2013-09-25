@@ -7,9 +7,9 @@
 #ImapSettings  = File.join(Rails.root, 'config', 'imap_settings.yml')
 
 ImapSettings =  { 
-  host:  ENV['IMAP_HOST'], 
-  port:  ENV['IMAP_PORT'], 
-  username: ENV['IMAP_USERNAME'], 
-  password: ENV['IMAP_PASSWORD'] 
+  host:  ENV['IMAP_TEST_HOST'], 
+  port:  ENV['IMAP_TEST_PORT'], 
+  username: ENV['IMAP_TEST_USERNAME'], 
+  password: ENV['IMAP_TEST_PASSWORD'] 
 }
 
