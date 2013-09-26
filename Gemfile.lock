@@ -1,4 +1,14 @@
 GIT
+  remote: git://github.com/mongoid/mongoid.git
+  revision: c4229f0c213d2e5c35552c93e514cb6d97405df2
+  specs:
+    mongoid (4.0.0)
+      activemodel (~> 4.0.0)
+      moped (~> 2.0.beta)
+      origin (~> 1.0)
+      tzinfo (~> 0.3.37)
+
+GIT
   remote: git://github.com/twilio/twilio-ruby.git
   revision: 46345a1eb6dbe26db1856f1a7c4cfe939a4f4428
   specs:
@@ -42,6 +52,7 @@ GEM
     better_errors (1.0.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+    bson (2.0.0.rc2)
     builder (3.1.4)
     coderay (1.1.0)
     coffee-rails (4.0.0)
@@ -52,11 +63,10 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     daemons (1.1.9)
-    devise (3.1.0)
+    devise (3.0.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
-      thread_safe (~> 0.1)
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.1)
@@ -76,7 +86,12 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25)
     minitest (4.7.5)
+    moped (2.0.0.beta)
+      bson (~> 2.0.0.rc2)
+      optionable (~> 0.1.1)
     multi_json (1.8.0)
+    optionable (0.1.1)
+    origin (1.1.0)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
     rack (1.5.2)
@@ -138,9 +153,10 @@ DEPENDENCIES
   better_errors
   coffee-rails (~> 4.0.0)
   daemons
-  devise
+  devise (~> 3.0.1)
   griddler
   jquery-rails
+  mongoid!
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)
   sqlite3-ruby

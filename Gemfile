@@ -3,7 +3,11 @@ source 'http://rubygems.org'
 gem 'rails', '4.0.0'
 
 gem 'sqlite3-ruby'
-gem 'devise'
+ 
+#mongoid is not ready for rails-4 but the github master is
+gem "mongoid", github: "mongoid/mongoid"
+
+gem "devise", "~> 3.0.1"
 
 gem 'daemons'
 gem 'sass-rails', '~> 4.0.0'  
