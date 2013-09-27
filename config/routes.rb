@@ -1,5 +1,9 @@
 Bloga::Application.routes.draw do
   
+  resources :notes
+
+  resources :note_books
+
   resources :authors
 
   resources :posts do

@@ -6,7 +6,7 @@ development:
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
       database: appt
-      username: bauchi
+      username: olympics
       password: beatrice
       
       #use inplace of the settings above for database, username, password
@@ -16,8 +16,8 @@ development:
       # of host:port pairs. (required)
       hosts:
         #- localhost:27017
-        #staff.mongohq.com:10056
-        ds047197.mongolab.com:47197
+        staff.mongohq.com:10056
+        #ds047197.mongolab.com:47197
       options:
         # Change the default write concern. (default = { w: 1 })
         # write:
@@ -74,12 +74,12 @@ test:
   sessions:
     default:
       database: appt
-      username: bauchi
+      username: olympics
       password: beatrice
       hosts:
         #- localhost:27017
-        #staff.mongohq.com:10056
-        ds047197.mongolab.com:47197
+        staff.mongohq.com:10056
+        #ds047197.mongolab.com:47197
       options:
         read: primary
         # In the test environment we lower the retries and retry interval to
