@@ -7,12 +7,12 @@
   #class_eval evaluates a string/block  in the context of the module or class.
   #underscore(camel_cased_word) makes an underscore eg 'ActiveModel'.underscore => 'active_model'
 
-module AddsMongoidRelationshipToActiveRecord
+module AddsHasManyMongoidToActiveRecord
   extend ActiveSupport::Concern
   included do
       def self.has_many_mongoid_documents(association_name)
         class_eval <<-EOS
-          def (#{association_name}).pluralize 
+          def (#{association_name.pluralize})
             @#{association_name} ||= #{association_name.to_s.singularize.classify}.where(#{name.underscore}_id: self.id})
           end
 
