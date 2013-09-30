@@ -7,6 +7,8 @@ gem 'sqlite3-ruby'
 #mongoid is not ready for rails-4 but the github master is
 gem "mongoid", github: "mongoid/mongoid"
 
+gem "active-record-mongoid-associations", :path => "~/workspace/active-record-mongoid-associations"
+
 gem "devise", "~> 3.0.1"
 
 gem 'daemons'
