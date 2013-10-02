@@ -1,4 +1,17 @@
 GIT
+  remote: git://github.com/emberjs/ember-rails.git
+  revision: ae39411ebed3ba6256665657c6fff52a67a316ea
+  specs:
+    ember-rails (0.13.0)
+      active_model_serializers
+      barber (>= 0.4.1)
+      ember-data-source
+      ember-source
+      execjs (>= 1.2)
+      handlebars-source
+      railties (>= 3.1)
+
+GIT
   remote: git://github.com/mongoid/mongoid.git
   revision: c4229f0c213d2e5c35552c93e514cb6d97405df2
   specs:
@@ -7,6 +20,13 @@ GIT
       moped (~> 2.0.beta)
       origin (~> 1.0)
       tzinfo (~> 0.3.37)
+
+GIT
+  remote: git://github.com/rails-api/active_model_serializers.git
+  revision: 919bb3840107e8176a65d90c0af8ec1e02cef683
+  specs:
+    active_model_serializers (0.8.1)
+      activemodel (>= 3.2)
 
 GIT
   remote: git://github.com/twilio/twilio-ruby.git
@@ -21,6 +41,12 @@ PATH
   remote: ~/workspace/activerecord-mongoid-associations
   specs:
     activerecord-mongoid-associations (0.0.1)
+
+PATH
+  remote: ~/workspace/ember_installer
+  specs:
+    ember_installer (0.0.1)
+      ember-rails (>= 0.13.0)
 
 GEM
   remote: http://rubygems.org/
@@ -51,12 +77,18 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.0)
     atomic (1.1.14)
+    barber (0.4.2)
+      ember-source
+      execjs
+      handlebars-source
     bcrypt-ruby (3.1.2)
     bcrypt-ruby (3.1.2-x86-mingw32)
     bcrypt-ruby (3.1.2-x86-mswin32)
     better_errors (1.0.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+    bootstrap-sass (2.3.2.2)
+      sass (~> 3.2)
     bson (2.0.0.rc2)
     builder (3.1.4)
     coderay (1.1.0)
@@ -73,11 +105,16 @@ GEM
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
       warden (~> 1.2.3)
+    ember-data-source (0.14)
+      ember-source
+    ember-source (1.0.0)
+      handlebars-source (= 1.0.12)
     erubis (2.7.0)
     execjs (2.0.1)
     griddler (0.6.1)
       htmlentities
       rails (>= 3.2.0)
+    handlebars-source (1.0.12)
     hike (1.2.3)
     htmlentities (4.3.1)
     i18n (0.6.5)
@@ -155,11 +192,15 @@ PLATFORMS
   x86-mswin32
 
 DEPENDENCIES
+  active_model_serializers!
   activerecord-mongoid-associations!
   better_errors
+  bootstrap-sass
   coffee-rails (~> 4.0.0)
   daemons
-  devise (~> 3.0.1)
+  devise (>= 3.0.1)
+  ember-rails!
+  ember_installer!
   griddler
   jquery-rails
   mongoid!

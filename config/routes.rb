@@ -1,5 +1,8 @@
 Bloga::Application.routes.draw do
   
+  #devise_for :users
+  resources :users
+  resources  :sessions
   resources :notes
 
   resources :note_books
