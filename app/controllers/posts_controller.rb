@@ -1,13 +1,11 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :destroy]
   
-  #to ensure only authenticated authors can post to the blog
-  #change the respond_to :html to respond_to :only => :index
-  respond_to :atom, :only => :index
+  respond_to :json, :html
   
   def index
-    @posts = Post.order("created_at desc")
-    #@posts = Post.all
+    #@posts = Post.order("created_at desc")
+    @posts = Post.all
     respond_with @posts
   end
   

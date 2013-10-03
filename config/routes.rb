@@ -1,13 +1,18 @@
 Bloga::Application.routes.draw do
-  
-  
+  devise_for :users, :controllers => {:sessions => 'sessions'},  skip: [:registrations, :sessions]
+  devise_scope :user do
+    get '/signin'   => "sessions#new",       :as => :new_user_session
+    post '/signin'  => 'sessions#create',    :as => :user_session
+    get '/signout'  => 'sessions#destroy',   :as => :destroy_user_session
+    get "/signup"   => "users#new",   :as => :new_user_registration
+   end
+
   resources :users
-  resources  :sessions
+  resources  :sessions 
+  
   resources :notes
 
   resources :note_books
-
-  resources :authors
 
   resources :posts do
       resources :comments

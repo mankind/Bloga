@@ -1,7 +1,8 @@
 class Post < ActiveRecord::Base
   
- include AddsHasManyMongoidToActiveRecord
- has_many_mongoid_documents :note_books
+  include AddsBelongsToMongoidToActiveRecord
+  belongs_to_mongoid_document :note_book
+ 
   
  has_many :comments
  belongs_to :author

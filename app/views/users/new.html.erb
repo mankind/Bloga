@@ -1,0 +1,53 @@
+<div class="row">
+  
+  <%= form_for @user do |f| %>
+  
+   <% if @user.errors.any? %>
+    <div id="error_explanation" class="alert-danger">
+      <h2><%= pluralize(@user.errors.count, "error") %>
+        prohibited this user from being saved:</h2>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    <% end %>
+  
+    <fieldset>
+      <legend>Registration form </legend>
+      
+      <div class="col-lg-8">
+        <div class="form-group">
+          <label class="control-label"><%= f.label :email %></label>
+          <div class="form-control"><%= f.email_field :email %></div>
+        </div>
+      </div>
+      
+      <div class="col-lg-8">
+        <div class="form-group">
+          <label class="control-label"><%= f.label :password %> </label>
+          <div class="form-control"><%= f.password_field :password%> </div>
+        </div>
+      </div>
+      
+       <div class="col-lg-8">
+        <div class="form-group">
+          <label class="control-label"><%= f.label :password_confirmation %> </label>
+          <div class="form-control"><%= f.password_field :password_confirmation%> </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-8">
+        <div class="form-group">
+          <div class="btn btn-primary">
+            <%= f.submit "Sign Up" %>
+          </div>
+        </div>
+      </div>
+      
+       <%= link_to "Forgot your password?", new_password_path(@user) %><br />      
+      
+    </fieldset>
+  <% end %> 
+</div>
