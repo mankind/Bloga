@@ -9,7 +9,7 @@ gem "mongoid", github: "mongoid/mongoid"
 
 gem "activerecord-mongoid-associations", :path => "~/workspace/activerecord-mongoid-associations"
 
-gem "devise", ">= 3.0.1"
+#gem "devise", ">= 3.0.1"
 
 gem 'daemons'
 gem 'sass-rails', '~> 4.0.0'  

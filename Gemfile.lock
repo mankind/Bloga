@@ -81,9 +81,6 @@ GEM
       ember-source
       execjs
       handlebars-source
-    bcrypt-ruby (3.1.2)
-    bcrypt-ruby (3.1.2-x86-mingw32)
-    bcrypt-ruby (3.1.2-x86-mswin32)
     better_errors (1.0.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -100,11 +97,6 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     daemons (1.1.9)
-    devise (3.0.3)
-      bcrypt-ruby (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
-      warden (~> 1.2.3)
     ember-data-source (0.14)
       ember-source
     ember-source (1.0.0)
@@ -134,7 +126,6 @@ GEM
     multi_json (1.8.0)
     optionable (0.1.1)
     origin (1.1.0)
-    orm_adapter (0.4.0)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -183,8 +174,6 @@ GEM
     uglifier (2.2.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
-    warden (1.2.3)
-      rack (>= 1.0)
 
 PLATFORMS
   ruby
@@ -198,7 +187,6 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   daemons
-  devise (>= 3.0.1)
   ember-rails!
   ember_installer!
   griddler
