@@ -1,10 +1,10 @@
 class NoteBooksController < ApplicationController
   before_action :set_note_book, only: [:show, :edit, :update, :destroy]
-  respond_to :html, :json
+  respond_to :json, :html
   
   def index
-    @note_books = NoteBook.order("created_at desc")
-    #@note_books = NoteBook.try(:order).try("created_at desc")
+    #@note_books = NoteBook.order("created_at desc")
+    @note_books = NoteBook.try(:all)
     respond_with @note_books
   end
   
@@ -17,7 +17,7 @@ class NoteBooksController < ApplicationController
   def create
     @note_book = NoteBook.new(note_book_params)
     @note_book.save
-    respond_with @user 
+    respond_with @note_book
   end
   
   def update

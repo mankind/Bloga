@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_users, only: [:show, :edit, :update, :destroy]
-  respond_to :html, :json
+  respond_to :json, :html
 
   def index
     @users = User.all
+    respond_with @users
   end
   
   def edit
@@ -30,7 +31,7 @@ class UsersController < ApplicationController
   def update
     if params[:user][:password].blank?
       params[:user].delete("password")
-      params[:user].delete("password_cpnfirmation")
+      params[:user].delete("password_confirmation")
     end
     if @user.update(user_params)
       sign_in :user, @user, bypass: true
