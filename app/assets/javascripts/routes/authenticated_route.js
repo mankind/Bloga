@@ -1,16 +1,23 @@
 App.AuthenticatedRoute = Ember.Route.extend({
   
   beforeModel: function(transition){
-    if (!this.controllerFor('userLogin').get('currentUser') ){
+    var applicationController = this.controllerFor('application');
+    
+    //check if currentUser is set
+    if (!applicationController.get('currentUser') ){
       this.redirectToLogin(transition);
-     }   
+    } else {
+      applicationController.login(); 
+    }
   },
   
+  // Redirect to the login page and store the current transition so we can
+  // run it again after login
   redirectToLogin: function(transition){
     alert("You must be signed in");
-    var userLoginController = this.controllerFor('userLogin");
-    userLoginController.set('savedTransition', transition);
-    this.transitionTo('userLogin');
+    var applicationController = this.controllerFor('application');
+    applicationController.set('afterLoginTransition', transition);
+    this.transitionTo('login');
   }
   
 });
