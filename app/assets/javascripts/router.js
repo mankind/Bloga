@@ -1,7 +1,6 @@
 
 
 App.Router.map(function(){
-  
   this.resource('authenticated');
   
   this.route('login');
@@ -13,7 +12,5 @@ App.Router.map(function(){
     });
   
   });
-  
-  
   
 });

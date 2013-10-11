@@ -10,4 +10,6 @@
 //= require app
 //= require_tree .
 
-App = Ember.Application.create();
+App = Ember.Application.create({
+  LOG_TRANSITIONS: true
+});

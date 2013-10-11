@@ -1,0 +1,10 @@
+{{#if currentlyLoggedin}}
+  <button {{action 'logoutUser'}}> Logout </button>
+{{/if}}
+
+{{#link-to 'login'}} Login {{/link-to}}
+
+{{#link-to 'signup'}} signup {{/link-to}}
+
+{{outlet}}
+

@@ -5,7 +5,7 @@ App.ApplicationRoute = Ember.Route.extend({
       var params = {
         dataType: "json",
         type: "GET",
-        url: "/signpout.json"
+        url: "/signout.json"
       },
           
       signout = Ember.$.ajax(params);

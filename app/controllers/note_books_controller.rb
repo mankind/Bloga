@@ -4,8 +4,10 @@ class NoteBooksController < ApplicationController
   
   def index
     #@note_books = NoteBook.order("created_at desc")
-    @note_books = NoteBook.try(:all)
-    respond_with @note_books
+    @note_books = NoteBook.all
+    #respond_with @note_books
+    #@notes = Note.all
+    #respond_with @notes
   end
   
   def show

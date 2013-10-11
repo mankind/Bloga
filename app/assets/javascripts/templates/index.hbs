@@ -1,0 +1,12 @@
+<h1> Welcome </h1>
+  {{#if currentlyLoggedin}}
+         {{ currentUser.email}}
+         
+    {{else}}
+    
+        <p>You must {{#link-to 'signup'}}register{{/link-to}}
+         or if you have an account
+         {{#link-to 'login'}} signin{{/link-to}} 
+         to use other parts of the app.</p>
+ 
+    {{/if}}

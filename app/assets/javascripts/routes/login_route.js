@@ -4,7 +4,7 @@ App.LoginRoute = Ember.Route.extend({
     loginUser: function( ) {
       self = this;
       
-      var loginController = self.controllerFor('login');
+      var loginController = this.controllerFor('login');
       email = loginController.get('email');
       password = loginController.get('password');
       
@@ -19,7 +19,7 @@ App.LoginRoute = Ember.Route.extend({
         var loaded;
         loaded = self.get('store').push('user', data.user);
         
-        self.controllerFor('application').set(currentUser, this.store.find('user', loaded.id));
+        self.controllerFor('application').set(currentUser, self.get('store').find('user', loaded.id));
         
         //this function redirects the user after successful loggedin to the link they wanted to access or to home page
         self.controllerFor('login').loginSuccessful();

@@ -21,7 +21,8 @@ Bloga::Application.routes.draw do
   match '/new', to: 'posts#about', via: :get
   match '/show', to: 'posts#show', via: :get
   
-  root  "posts#index"
+  #root  "posts#index"
+  root "users#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
