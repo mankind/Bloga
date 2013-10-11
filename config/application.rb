@@ -32,5 +32,8 @@ module Bloga
     end
     
     
+    #for ember handlebars
+    config.handlebars.template_root  = "templates"
+    
   end
 end
