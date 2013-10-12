@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/emberjs/ember-rails.git
-  revision: ae39411ebed3ba6256665657c6fff52a67a316ea
+  revision: 2ef75c2b87dbdefde849a2a52a5ac54203f5b0dc
   specs:
     ember-rails (0.13.0)
       active_model_serializers
@@ -82,6 +82,8 @@ GEM
       execjs
       handlebars-source
     bcrypt-ruby (3.1.2)
+    bcrypt-ruby (3.1.2-x86-mingw32)
+    bcrypt-ruby (3.1.2-x86-mswin32)
     better_errors (1.0.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)

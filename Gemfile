@@ -24,8 +24,9 @@ gem 'bootstrap-sass'
 
 gem "active_model_serializers", :git => 'git://github.com/rails-api/active_model_serializers.git'
 
-#gem 'ember-rails', github: 'emberjs/ember-rails'
-gem "ember-rails", :git => 'git://github.com/emberjs/ember-rails.git'
+gem 'ember-rails', github: 'emberjs/ember-rails'
+#gem "ember-rails", :git => 'git://github.com/emberjs/ember-rails.git'
+#gem 'ember-rails', path: '~/workspace/modified/ember-rails', branch: 'master'
 
 gem "ember_installer", :path => "~/workspace/ember_installer"
 #gem 'ember-source', '1.0.0'
