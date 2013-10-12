@@ -6,9 +6,8 @@
 //= require handlebars
 //= require ember
 // require ./lib/development/ember
-// require ember-data
+//= require ember-data
 // require ./lib/development/ember-data
-//= require ./ember/development/ember-data
 //= require_self
 //= require app
 //= require_tree .
@@ -18,3 +17,8 @@ App = Ember.Application.create({
    DEBUG: true,
   LOG_VIEW_LOOKUPS: true
 });
+
+
+App.ApplicationAdapter = DS.ActiveModelAdapter.extend();
+
+App.ApplicationSerializer = DS.ActiveModelSerializer.extend();

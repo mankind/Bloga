@@ -1,5 +1,5 @@
 // Fetched from: http://builds.emberjs.com/ember-latest.min.js
-// Fetched on: 2013-10-12T13:22:32Z
+// Fetched on: 2013-10-12T17:37:50Z
 // ==========================================================================
 // Project:   Ember - JavaScript Application Framework
 // Copyright: Copyright 2011-2013 Tilde Inc. and contributors

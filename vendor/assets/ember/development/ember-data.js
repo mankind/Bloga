@@ -1,5 +1,5 @@
 // Fetched from: http://builds.emberjs.com/ember-data-latest.js
-// Fetched on: 2013-10-10T23:06:23Z
+// Fetched on: 2013-10-12T17:37:52Z
 // ==========================================================================
 // Project:   Ember Data
 // Copyright: Copyright 2011-2013 Tilde Inc. and contributors.
@@ -9,8 +9,8 @@
 
 
 
-// Version: v1.0.0-beta.3-53-g81f8e7c
-// Last commit: 81f8e7c (2013-10-10 10:28:16 -0700)
+// Version: v1.0.0-beta.3-56-g8367aa5
+// Last commit: 8367aa5 (2013-10-12 07:56:29 +0300)
 
 
 (function() {
@@ -1896,9 +1896,14 @@ DS.Store = Ember.Object.extend(DS._Mappable, {
     If any of a record's properties change, or if it changes state, the
     filter function will be invoked again to determine whether it should
     still be in the array.
+    
+    Optionally you can pass a query which will be triggered at first. The
+    results returned by the server could then appear in the filter if they
+    match the filter function.
 
     @method filter
     @param {Class} type
+    @param {Object} query optional query
     @param {Function} filter
     @return {DS.FilteredRecordArray}
   */

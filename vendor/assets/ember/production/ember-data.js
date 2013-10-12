@@ -1,5 +1,5 @@
 // Fetched from: http://builds.emberjs.com/ember-data-latest.min.js
-// Fetched on: 2013-10-10T23:06:24Z
+// Fetched on: 2013-10-12T17:37:54Z
 // ==========================================================================
 // Project:   Ember Data
 // Copyright: Copyright 2011-2013 Tilde Inc. and contributors.
@@ -9,8 +9,8 @@
 
 
 
-// Version: v1.0.0-beta.3-53-g81f8e7c
-// Last commit: 81f8e7c (2013-10-10 10:28:16 -0700)
+// Version: v1.0.0-beta.3-56-g8367aa5
+// Last commit: 8367aa5 (2013-10-12 07:56:29 +0300)
 
 
 // Copyright: Copyright 2011-2013 Tilde Inc. and contributors.
