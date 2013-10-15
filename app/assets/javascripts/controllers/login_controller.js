@@ -1,5 +1,5 @@
 App.LoginController = Ember.ObjectController.extend({
-  needs: ['application'],
+  needs: 'application',
   email: ' ',
   password: '',
   
@@ -21,7 +21,7 @@ App.LoginController = Ember.ObjectController.extend({
     if(transition){
       transition.retry();
     } else {
-      this.transitionToRoute('index');
+      this.transitionTo('index');
     }
     
   }

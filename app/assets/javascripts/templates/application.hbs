@@ -1,10 +1,13 @@
-{{#if currentlyLoggedin}}
+{{#if loggedIn}}
   <button {{action 'logoutUser'}}> Logout </button>
+  
+ {{else}}
+   {{#link-to 'login'}} Login {{/link-to}}
+
+   {{#link-to 'signup'}} signup {{/link-to}}
 {{/if}}
 
-{{#link-to 'login'}} Login {{/link-to}}
 
-{{#link-to 'signup'}} signup {{/link-to}}
 
 {{outlet}}
 
