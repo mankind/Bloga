@@ -14,8 +14,15 @@ App.SignupRoute = Ember.Route.extend({
       self = this;
       user.save().then(
         function(){
-          self.controllerFor('application').set('currentUser', user);
-          self.transitionTo('index', user);        
+           var applicationController = self.controllerFor('application');
+            //set loggedIn, so the UI shows the button to logout
+             applicationController.login();
+            //alert(JSON.stringify(a));
+          //self.controllerFor('application').set('currentUser', user);
+            //this deosn't redirect
+          //self.transitionTo('index', user);
+          
+          self.transitionTo('index');
         },
         function(error){
           if(error.status==422){

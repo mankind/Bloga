@@ -1,4 +1,4 @@
-App.UserRoute = Ember.Route.extend({
+App.UserRoute = App.AuthenticatedRoute.extend({
   
   
 });
