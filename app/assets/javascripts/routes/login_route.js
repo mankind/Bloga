@@ -18,7 +18,7 @@ App.LoginRoute = Ember.Route.extend({
       login.then(function(data){ 
         console.log(data);
         var loaded;
-        loaded = self.get('store').pushMany('user', data.user);
+        loaded = self.get('store').push('user', data.user);
          //alert(JSON.stringify(loaded.id));
         console.log(loaded);
         console.log('la', loaded.get('username') );

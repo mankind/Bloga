@@ -2,3 +2,8 @@
  or if you have an account
  {{#link-to 'login'}} signin{{/link-to}} 
  to use other parts of the app.</p>
+ <br/>
+ {{#each item in controller}}
+     <br/> 
+      {{#link-to 'user' item}} Welcome user: {{item.username}} {{/link-to}} 
+ {{/each}}

@@ -2,11 +2,12 @@ App.AuthenticatedRoute = Ember.Route.extend({
   
   beforeModel: function(transition){
     var applicationController = this.controllerFor('application');
-    
+    console.log('dot', applicationController.currentlyLoggedIn);
+    console.log('get', applicationController.get('currentlyLoggedIn'));
     //check if currentUser is set
     //!applicationController.get('loggedIn')
-   
-    if (!applicationController.get('currentlyLoggedin') ){
+
+    if (!applicationController.get('currentlyLoggedIn')){
       this.redirectToLogin(transition);
     } else {
       applicationController.login(); 
