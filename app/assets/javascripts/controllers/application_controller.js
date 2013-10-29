@@ -1,7 +1,7 @@
 App.ApplicationController = Ember.Controller.extend({
   
   currentUser: null,
-  
+  authToken: null,
   // used to show, or not show, the log out button
   loggedIn: false,
   
@@ -13,11 +13,12 @@ App.ApplicationController = Ember.Controller.extend({
   // when they have logged in.
   afterLoginTransition: null,
   
+  isauthToken: Ember.computed.notEmpty('authToken'),
   isCurrentUser: Ember.computed.notEmpty('currentUser'),
   isLoggedin: Ember.computed.equal('loggedIn', true),
   
   //returns true if 'isCurrentUser' and 'isloggedIn' are both true and returns false if any of them is flase
-  currentlyLoggedin: Ember.computed.and('isCurrentUser', 'isLoggedin'),
+  currentlyLoggedIn: Ember.computed.and('isauthToken', 'isLoggedin'),
   
   login: function(){
     this.setProperties({
@@ -29,7 +30,8 @@ App.ApplicationController = Ember.Controller.extend({
   logOut: function(){
     this.setProperties({
       loggedIn: false,
-      currentUser: null
+      //currentUser: null,
+      authToken: null
     });    
   }
   

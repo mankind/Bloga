@@ -199,7 +199,7 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   daemons
-  devise (>= 3.0.1)
+  devise (>= 3.1.0)
   ember-rails!
   ember_installer!
   griddler

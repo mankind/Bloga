@@ -21,7 +21,7 @@ App.LoginController = Ember.ObjectController.extend({
     if(transition){
       transition.retry();
     } else {
-      this.transitionTo('index');
+      this.transitionToRoute('index');
     }
     
   }

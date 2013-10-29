@@ -14,6 +14,8 @@ App.SignupRoute = Ember.Route.extend({
       self = this;
       user.save().then(
         function(){
+          console.log(self);
+          
            var applicationController = self.controllerFor('application');
             //set loggedIn, so the UI shows the button to logout
              applicationController.login();

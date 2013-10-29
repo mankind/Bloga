@@ -4,6 +4,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   
+  #source in app/models/concerns
+  include TokenAuthenticatable
+  
+  #added via  activerecord-mongoid-association gem
   include AddsHasManyMongoidToActiveRecord
+  
   has_many_mongoid_documents :note_books
 end
