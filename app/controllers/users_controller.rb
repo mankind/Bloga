@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   respond_to :json, :html
 
   def index
-    @users = User.all
+   @users = User.all
     respond_with @users
   end
   

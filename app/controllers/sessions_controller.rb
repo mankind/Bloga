@@ -27,12 +27,14 @@ class SessionsController < ApplicationController
     # expire auth token
    current_user.authentication_token = nil
    current_user.save
-    #head :ok
+    #returns a http status code 204
+   head :no_content
     
     #not really need since we are not storing token in session
     #sign_out current_user 
     
-    render json: nil, :status => :ok
+    #this works
+    #render json: nil, :status => :ok
     
     ##sign_out :user
   end
