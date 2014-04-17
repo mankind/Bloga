@@ -11,7 +11,6 @@ development:
       
       #use inplace of the settings above for database, username, password
       #uri: mongodb://<user>:<password>@mongodb_host:host_port/db_name
-      uri: mongodb://olympics:beatrice@staff.mongohq.com:10056/appt
       
      
      
