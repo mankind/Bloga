@@ -77,7 +77,7 @@ development:
 test:
   sessions:
     default:
-      uri: mongodb://olympics:beatrice@staff.mongohq.com:10056/appt
+     
       #database: appt
       #username: olympics
       #password: beatrice
